@@ -123,5 +123,3 @@ function iniciarTramiteOnline() {
 
     document.getElementById('mensaje-tramite-online').innerText = `Trámite iniciado para ${nombre} (Documento: ${documento}).`;
 }
-
-
