@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trámites - tramites.gub</title>
+    <link rel="stylesheet" href="./pago.csc.css">
+</head>
+<body>
+    <header class="header">
+        <h1>tramites.gub</h1>
+        <p>Bienvenido al sistema de gestión de trámites en línea. Aquí puedes iniciar un turno, hacer seguimiento de tu expediente, y comenzar un trámite en línea.</p>
+    </header>
+
+    <nav class="navigation">
+        <a href="#solicitar-turno" onclick="mostrarFormulario()">Iniciar Turno</a>
+        <a href="#carrito" onclick="mostrarCarrito()">Ver Carrito</a>
+        <a href="#seguimiento-expediente" onclick="mostrarSeguimientoExpediente()">Seguimiento de Expediente</a>
+        <a href="#tramite-online" onclick="mostrarTramiteOnline()">Iniciar Trámite en Línea</a>
+    </nav>
+
+    <!-- Formulario para Iniciar Turno -->
+    <section id="formulario-turno" class="container" style="display:none;">
+        <h2>Iniciar Turno</h2>
+        <input type="text" id="nombre" placeholder="Ingrese su nombre">
+        <select id="tramite">
+            <option value="comun">Trámite Común - $100</option>
+            <option value="urgente">Trámite Urgente - $200</option>
+            <option value="online">Trámite Online - $50</option>
+        </select>
+        <button onclick="agregarAlCarrito()">Agregar al Carrito</button>
+        <p id="mensaje"></p>
+    </section>
+
+    <!-- Carrito -->
+    <section id="carrito" class="container" style="display:none;">
+        <h2>Carrito de Trámites</h2>
+        <ul id="carrito-lista"></ul>
+        <p>Total: $<span id="carrito-total">0</span></p>
+        <button onclick="realizarPago()">Realizar Pago</button>
+    </section>
+
+    <!-- Seguimiento de Expediente -->
+    <section id="seguimiento-expediente" class="container" style="display:none;">
+        <h2>Seguimiento de Expediente</h2>
+        <input type="text" id="numero-expediente" placeholder="Ingrese número de expediente">
+        <button onclick="consultarExpediente()">Consultar</button>
+        <p id="resultado-expediente"></p>
+    </section>
+
+    <!-- Trámite en Línea -->
+    <section id="tramite-online" class="container" style="display:none;">
+        <h2>Iniciar Trámite en Línea</h2>
+        <input type="text" id="documento" placeholder="Ingrese su número de documento">
+        <input type="text" id="nombre-tramite" placeholder="Ingrese su nombre">
+        <button onclick="iniciarTramiteOnline()">Iniciar Trámite</button>
+        <p id="mensaje-tramite-online"></p>
+    </section>
+
+    <script src="./JS.EntregaF.js"></script>
+</body>
+</html>
